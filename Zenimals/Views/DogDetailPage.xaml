@@ -2,9 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="Zenimals.Views.DogDetailPage"
+
+             xmlns:mvvm="clr-namespace:ZenMvvm;assembly=ZenMvvm"
+             mvvm:ViewModelLocator.AutoWireViewModel="True"
              Title="Dog Details">
     <ScrollView>
-        <StackLayout Margin="20">
+        <StackLayout Margin="20" BindingContext="{Binding Dog}">
             <Label Text="{Binding Name}" 
                    HorizontalOptions="Center" 
                    Style="{DynamicResource TitleStyle}" />

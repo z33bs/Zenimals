@@ -92,6 +92,10 @@
       <Project>{3E13471D-4672-4ED9-A6B4-46F0872F930F}</Project>
       <Name>Zenimals</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ZenMvvm\src\ZenMvvm\ZenMvvm.csproj">
+      <Project>{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}</Project>
+      <Name>ZenMvvm</Name>
+    </ProjectReference>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

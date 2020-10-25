@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenimals.iOS", "Zenimals.iO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenimals", "Zenimals\Zenimals.csproj", "{3E13471D-4672-4ED9-A6B4-46F0872F930F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenMvvm", "..\ZenMvvm\src\ZenMvvm\ZenMvvm.csproj", "{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{3E13471D-4672-4ED9-A6B4-46F0872F930F}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{3E13471D-4672-4ED9-A6B4-46F0872F930F}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{3E13471D-4672-4ED9-A6B4-46F0872F930F}.Release|iPhone.Build.0 = Release|Any CPU
+		{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{ACBEAEF4-EA83-4B3D-8547-B527DC59C093}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
