@@ -4,14 +4,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Zenimals.Models;
+using Zenimals.Views;
 using ZenMvvm;
 
 namespace Zenimals.Controls
 {
     public class AnimalSearchHandler : SearchHandler
     {
-        public IList<Animal> Animals { get; set; }
+        public IEnumerable<Animal> Animals { get; set; }
         public Type SelectedItemNavigationTarget { get; set; }
+
+        public AnimalSearchHandler()
+        {
+            Placeholder = "Enter search term";
+            ShowsResults = true;
+            SelectedItemNavigationTarget = typeof(DogDetailPage);
+
+            ItemTemplate = Application.Current.Resources["AnimalSearchTemplate"] as DataTemplate;
+        }
 
         protected override void OnQueryChanged(string oldValue, string newValue)
         {
