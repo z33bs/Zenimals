@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:Zenimals.Controls"
              xmlns:data="clr-namespace:Zenimals.Data"
+             xmlns:views="clr-namespace:Zenimals.Views"
              x:Class="Zenimals.Views.MonkeysPage"
+
+             xmlns:mvvm="clr-namespace:ZenMvvm;assembly=ZenMvvm"
+             mvvm:ViewModelLocator.WireSpecificViewModel="AnimalsViewModel"
              Title="Monkeys">
     <ContentPage.Resources>
         <Style TargetType="Grid">
@@ -24,14 +28,19 @@
     </ContentPage.Resources>
     
     <Shell.SearchHandler>
-        <controls:MonkeySearchHandler Placeholder="Enter search term"
+        <controls:AnimalSearchHandler Placeholder="Enter search term"
                                       ShowsResults="true"
-                                      DisplayMemberName="Name" />
+                                      ItemTemplate="{StaticResource AnimalSearchTemplate}"
+                                      Animals="{x:Static data:MonkeyData.Monkeys}"
+                                      SelectedItemNavigationTarget="{x:Type views:MonkeyDetailPage}" />
     </Shell.SearchHandler>
     
     <CollectionView Margin="20"
                     ItemsSource="{x:Static data:MonkeyData.Monkeys}"
                     ItemTemplate="{StaticResource AnimalTemplate}"
                     SelectionMode="Single"
-                    SelectionChanged="OnCollectionViewSelectionChanged" />
+                    x:Name="AnimalsCollectionView"
+                    SelectionChangedCommand="{Binding BindingContext.SelectionChangedCommand, Source={x:Reference AnimalsCollectionView}}"
+                    SelectionChangedCommandParameter="{Binding ., Source={x:Reference AnimalsCollectionView}}"
+                    StyleId="monkeydetails"/>      
 </ContentPage>

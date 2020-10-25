@@ -5,6 +5,9 @@
              xmlns:data="clr-namespace:Zenimals.Data"
              xmlns:views="clr-namespace:Zenimals.Views"
              x:Class="Zenimals.Views.CatsPage"
+
+             xmlns:mvvm="clr-namespace:ZenMvvm;assembly=ZenMvvm"
+             mvvm:ViewModelLocator.WireSpecificViewModel="AnimalsViewModel"
              Title="Cats">
     <ContentPage.Resources>
         <Style TargetType="Grid">
@@ -32,9 +35,13 @@
                                       SelectedItemNavigationTarget="{x:Type views:CatDetailPage}" />
     </Shell.SearchHandler>
     
-    <CollectionView Margin="20"
+    <CollectionView 
+                    Margin="20"
                     ItemsSource="{x:Static data:CatData.Cats}"
                     ItemTemplate="{StaticResource AnimalTemplate}"
                     SelectionMode="Single"
-                    SelectionChanged="OnCollectionViewSelectionChanged" />      
+                    x:Name="AnimalsCollectionView"
+                    SelectionChangedCommand="{Binding BindingContext.SelectionChangedCommand, Source={x:Reference AnimalsCollectionView}}"
+                    SelectionChangedCommandParameter="{Binding ., Source={x:Reference AnimalsCollectionView}}"
+                    StyleId="catdetails"/>      
 </ContentPage>

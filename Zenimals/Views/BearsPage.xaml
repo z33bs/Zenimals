@@ -5,6 +5,9 @@
              xmlns:data="clr-namespace:Zenimals.Data"
              xmlns:views="clr-namespace:Zenimals.Views"
              x:Class="Zenimals.Views.BearsPage"
+
+             xmlns:mvvm="clr-namespace:ZenMvvm;assembly=ZenMvvm"
+             mvvm:ViewModelLocator.WireSpecificViewModel="AnimalsViewModel"
              Title="Bears">
     <ContentPage.Resources>
         <Style TargetType="Grid">
@@ -46,5 +49,8 @@
                     ItemsSource="{x:Static data:BearData.Bears}"
                     ItemTemplate="{StaticResource AnimalTemplate}"
                     SelectionMode="Single"
-                    SelectionChanged="OnCollectionViewSelectionChanged" />
+                    x:Name="AnimalsCollectionView"
+                    SelectionChangedCommand="{Binding BindingContext.SelectionChangedCommand, Source={x:Reference AnimalsCollectionView}}"
+                    SelectionChangedCommandParameter="{Binding ., Source={x:Reference AnimalsCollectionView}}"
+                    StyleId="beardetails"/>
 </ContentPage>

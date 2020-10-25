@@ -8,7 +8,6 @@ namespace Zenimals.Views
         public MonkeyDetailPage()
         {
             InitializeComponent();
-            BindingContext = new MonkeyDetailViewModel();
         }
     }
 }
