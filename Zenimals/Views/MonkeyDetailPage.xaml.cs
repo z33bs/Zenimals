@@ -1,5 +1,4 @@
 ﻿using Xamarin.Forms;
-using Zenimals.ViewModels;
 
 namespace Zenimals.Views
 {

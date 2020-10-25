@@ -2,7 +2,6 @@
 
 namespace Zenimals.Views
 {
-
     public partial class ElephantDetailPage : ContentPage
     {
         public ElephantDetailPage()

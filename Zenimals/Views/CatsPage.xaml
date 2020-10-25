@@ -35,8 +35,7 @@
                                       SelectedItemNavigationTarget="{x:Type views:CatDetailPage}" />
     </Shell.SearchHandler>
     
-    <CollectionView 
-                    Margin="20"
+    <CollectionView Margin="20"
                     ItemsSource="{x:Static data:CatData.Cats}"
                     ItemTemplate="{StaticResource AnimalTemplate}"
                     SelectionMode="Single"

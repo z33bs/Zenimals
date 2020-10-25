@@ -4,10 +4,10 @@
              x:Class="Zenimals.Views.DogDetailPage"
 
              xmlns:mvvm="clr-namespace:ZenMvvm;assembly=ZenMvvm"
-             mvvm:ViewModelLocator.AutoWireViewModel="True"
+             mvvm:ViewModelLocator.WireSpecificViewModel="AnimalDetailViewModel"
              Title="Dog Details">
     <ScrollView>
-        <StackLayout Margin="20" BindingContext="{Binding Dog}">
+        <StackLayout Margin="20" BindingContext="{Binding Animal}">
             <Label Text="{Binding Name}" 
                    HorizontalOptions="Center" 
                    Style="{DynamicResource TitleStyle}" />
