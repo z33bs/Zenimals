@@ -55,47 +55,6 @@ namespace Zenimals.Views
                 "Monkeys" => MonkeyData.Monkeys,
                 _ => throw new NotImplementedException()
             };
-
-            //Resources.Add(new Style(typeof(Grid))
-            //{
-            //    Setters = {
-            //        new Setter
-            //        {
-            //            Property=VisualStateManager.VisualStateGroupsProperty,
-            //            Value = new VisualStateGroupList
-            //            {
-            //                new VisualStateGroup
-            //                {
-            //                    Name="CommonStates",
-            //                    States = {
-            //                        //new VisualState {
-            //                        //    Name="Normal",
-            //                        //    Setters =
-            //                        //    {
-            //                        //        new Setter
-            //                        //        {
-            //                        //            Property=BackgroundColorProperty,
-            //                        //            Value= "Transparent"
-            //                        //        }
-            //                        //    }
-            //                        //},
-            //                        new VisualState {
-            //                            Name="Selected",
-            //                            Setters =
-            //                            {
-            //                                new Setter
-            //                                {
-            //                                    Property=BackgroundColorProperty,
-            //                                    Value= "#039BE6"
-            //                                }
-            //                            }
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //        }
-            //    }
-            //});
         }
     }
 }

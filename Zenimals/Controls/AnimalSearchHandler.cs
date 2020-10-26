@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Zenimals.Models;
-using Zenimals.Views;
 using ZenMvvm;
 
 namespace Zenimals.Controls
 {
     public class AnimalSearchHandler : SearchHandler
     {
-
-        public Type SelectedItemNavigationTarget { get; set; }
-
         public static readonly BindableProperty DataProperty = BindableProperty.Create("Data", typeof(IEnumerable<Animal>), typeof(AnimalSearchHandler));
         public IEnumerable<Animal> Data
         {
@@ -25,8 +20,6 @@ namespace Zenimals.Controls
         {
             Placeholder = "Enter search term";
             ShowsResults = true;
-            SelectedItemNavigationTarget = typeof(DogDetailPage);
-
             ItemTemplate = Application.Current.Resources["AnimalSearchTemplate"] as DataTemplate;
         }
 
@@ -48,18 +41,12 @@ namespace Zenimals.Controls
 
         protected override async void OnItemSelected(object item)
         {
-            var navigationService = DiContainer.Resolve<INavigationService>();
-
             base.OnItemSelected(item);
-            await Task.Delay(1000);
+            await Task.Delay(500);
 
-            if (SelectedItemNavigationTarget == typeof(Views.ElephantDetailPage))
-                await navigationService.GoToAsync($"{GetNavigationTarget()}?name={(item as Animal).Name}");
-            else
-                await navigationService.GoToAsync($"{GetNavigationTarget()}",(Animal)item);
+            await DiContainer
+                .Resolve<INavigationService>()
+                .GoToAsync($"details", (Animal)item);
         }
-
-        string GetNavigationTarget() =>
-            (Shell.Current as AppShell).Routes.FirstOrDefault(route => route.Value.Equals(SelectedItemNavigationTarget)).Key;
     }
 }

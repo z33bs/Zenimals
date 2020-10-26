@@ -28,10 +28,7 @@ namespace Zenimals
 
         void RegisterRoutes()
         {
-            routes.Add("monkeydetails", typeof(MonkeyDetailPage));
-            routes.Add("beardetails", typeof(BearDetailPage));
-            routes.Add("catdetails", typeof(CatDetailPage));
-            routes.Add("dogdetails", typeof(DogDetailPage));
+            routes.Add("details", typeof(AnimalDetailPage));
             routes.Add("elephantdetails", typeof(ElephantDetailPage));
 
             foreach (var item in routes)
