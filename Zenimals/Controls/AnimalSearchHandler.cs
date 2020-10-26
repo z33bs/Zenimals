@@ -11,8 +11,15 @@ namespace Zenimals.Controls
 {
     public class AnimalSearchHandler : SearchHandler
     {
-        public IEnumerable<Animal> Animals { get; set; }
+
         public Type SelectedItemNavigationTarget { get; set; }
+
+        public static readonly BindableProperty DataProperty = BindableProperty.Create("Data", typeof(IEnumerable<Animal>), typeof(AnimalSearchHandler));
+        public IEnumerable<Animal> Data
+        {
+            get => GetValue(DataProperty) as IEnumerable<Animal>;
+            set => SetValue(DataProperty, value);
+        }
 
         public AnimalSearchHandler()
         {
@@ -33,7 +40,7 @@ namespace Zenimals.Controls
             }
             else
             {
-                ItemsSource = Animals
+                ItemsSource = Data
                     .Where(animal => animal.Name.ToLower().Contains(newValue.ToLower()))
                     .ToList();
             }

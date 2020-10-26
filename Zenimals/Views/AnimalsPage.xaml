@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Zenimals.Controls"
+    x:Class="Zenimals.Views.AnimalsPage"
+    x:Name="self">
+
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" 
+                                        Value="{Binding ItemSelectedBackgroundColor,Source={x:Reference self}}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <Shell.SearchHandler>
+        <controls:AnimalSearchHandler Data="{Binding Data, Source={x:Reference self}}"/>
+    </Shell.SearchHandler>
+
+    <CollectionView Margin="20"
+                    ItemsSource="{Binding Data, Source={x:Reference self}}"
+                    ItemTemplate="{StaticResource AnimalTemplate}"
+                    SelectionMode="Single"
+                    x:Name="AnimalsCollectionView"
+                    SelectionChangedCommand="{Binding BindingContext.SelectionChangedCommand, Source={x:Reference Name=AnimalsCollectionView}}"
+                    SelectionChangedCommandParameter="{Binding ., Source={x:Reference Name=AnimalsCollectionView}}"
+                    StyleId="dogdetails"/>
+</ContentPage>
