@@ -7,6 +7,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Zenimals.Data;
 using Zenimals.Views;
+using ZenMvvm.Helpers;
 
 namespace Zenimals
 {
@@ -16,8 +17,11 @@ namespace Zenimals
         Dictionary<string, Type> routes = new Dictionary<string, Type>();
         public Dictionary<string, Type> Routes { get { return routes; } }
 
-        public ICommand HelpCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
-        public ICommand RandomPageCommand => new Command(async () => await NavigateToRandomPageAsync());
+        //ZM Instead of => new Command<string>(async (url) => await Launcher.OpenAsync(url));
+        public ICommand HelpCommand
+            => new SafeCommand<string>(Launcher.OpenAsync);
+        public ICommand RandomPageCommand
+            => new SafeCommand(NavigateToRandomPageAsync);
 
         public AppShell()
         {
