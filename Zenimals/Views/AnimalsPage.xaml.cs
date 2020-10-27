@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Zenimals.Data;
 using Zenimals.Models;
+using ZenMvvm;
 
 namespace Zenimals.Views
 {
@@ -35,6 +36,8 @@ namespace Zenimals.Views
         public AnimalsPage(string animal)
         {
             InitializeComponent();
+
+            Title = animal;
 
             ItemSelectedBackgroundColor = animal switch
             {

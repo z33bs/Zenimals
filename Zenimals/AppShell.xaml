@@ -2,13 +2,16 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:controls="clr-namespace:Zenimals.Controls"
-       xmlns:views="clr-namespace:Zenimals.Views" xmlns:data="clr-namespace:Zenimals.Data"
+       xmlns:views="clr-namespace:Zenimals.Views"
+       xmlns:mvvm="clr-namespace:ZenMvvm;assembly=ZenMvvm"
        FlyoutBackgroundImage="photo.jpg"
        FlyoutBackgroundImageAspect="AspectFill"
        FlyoutHeaderBehavior="CollapseOnScroll"
        Navigating="OnNavigating"
        Navigated="OnNavigated"
-       x:Class="Zenimals.AppShell">
+       mvvm:ViewModelLocator.WireSpecificAssemblyQualifiedViewModel="Zenimals.ViewModels.AppShellViewModel, Zenimals"
+       x:Class="Zenimals.AppShell"
+       x:Name="self">
     <Shell.Resources>
         <Style x:Key="BaseStyle"
                TargetType="Element">

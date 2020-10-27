@@ -1,5 +1,11 @@
-﻿using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿//todo vm-first approach : open generics applied to viewModel. And manual wiring.
+//todo remove elephants
+//todo about and help zenmvvm
+//todo templates separated
+//todo neat styles?
+//todo ZM comments allround
+
+using Xamarin.Forms;
 
 namespace Zenimals
 {
