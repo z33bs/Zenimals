@@ -137,4 +137,33 @@
       <Name>ZenMvvm</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dog.png" />
+    <BundleResource Include="Resources\info.png" />
+    <BundleResource Include="Resources\back%402x.png" />
+    <BundleResource Include="Resources\dog%402x.png" />
+    <BundleResource Include="Resources\random%402x.png" />
+    <BundleResource Include="Resources\3bar.png" />
+    <BundleResource Include="Resources\bear%402x.png" />
+    <BundleResource Include="Resources\elephant.png" />
+    <BundleResource Include="Resources\cat%402x.png" />
+    <BundleResource Include="Resources\paw.png" />
+    <BundleResource Include="Resources\3bar%402x.png" />
+    <BundleResource Include="Resources\monkey%402x.png" />
+    <BundleResource Include="Resources\elephant%402x.png" />
+    <BundleResource Include="Resources\xamarinstore.jpg" />
+    <BundleResource Include="Resources\info%402x.png" />
+    <BundleResource Include="Resources\xamarin_logo%402x.png" />
+    <BundleResource Include="Resources\photo.jpg" />
+    <BundleResource Include="Resources\cat.png" />
+    <BundleResource Include="Resources\random.png" />
+    <BundleResource Include="Resources\help.png" />
+    <BundleResource Include="Resources\help%402x.png" />
+    <BundleResource Include="Resources\xamarin_logo.png" />
+    <BundleResource Include="Resources\xamarin_logo%403x.png" />
+    <BundleResource Include="Resources\monkey.png" />
+    <BundleResource Include="Resources\paw%402x.png" />
+    <BundleResource Include="Resources\back.png" />
+    <BundleResource Include="Resources\bear.png" />
+  </ItemGroup>
 </Project>
