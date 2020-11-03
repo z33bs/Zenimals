@@ -109,8 +109,13 @@
             Route="elephants"
             Style="{StaticResource ElephantsShell}"
             Title="Elephants"
-            Icon="elephant.png"
-            ContentTemplate="{DataTemplate views:ElephantsPage}"/>
+            Icon="elephant.png">
+            <views:AnimalsPage>
+                <x:Arguments>
+                    <x:String>Elephants</x:String>
+                </x:Arguments>
+            </views:AnimalsPage>
+        </ShellContent>
         <ShellContent
             Route="bears"
             Style="{StaticResource BearsShell}"

@@ -1,9 +1,9 @@
-﻿//todo vm-first approach : open generics applied to viewModel. And manual wiring.
-//todo remove elephants
-//todo about and help zenmvvm
-//todo templates separated
+﻿//todo about and help zenmvvm
+//todo templates separated into templates folder
 //todo neat styles?
 //todo ZM comments allround
+//todo WirespecificViewModel -> both assembly q ualified and default. Document this feature.
+//todo AnimalsPage uses VM more
 
 using Xamarin.Forms;
 
