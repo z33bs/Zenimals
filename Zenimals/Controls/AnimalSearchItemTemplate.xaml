@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Zenimals.Controls.AnimalSearchItemTemplate">
+    <Grid Padding="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.15*" />
+            <ColumnDefinition Width="0.85*" />
+        </Grid.ColumnDefinitions>
+        <Image Source="{Binding ImageUrl}" 
+                       Aspect="AspectFill"
+                       HeightRequest="40" 
+                       WidthRequest="40" />
+        <Label Grid.Column="1" 
+                       Text="{Binding Name}" 
+                       FontAttributes="Bold" />
+    </Grid>
+</ContentView>

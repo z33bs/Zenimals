@@ -20,7 +20,7 @@ namespace Zenimals.Controls
         {
             Placeholder = "Enter search term";
             ShowsResults = true;
-            ItemTemplate = Application.Current.Resources["AnimalSearchTemplate"] as DataTemplate;
+            ItemTemplate = new DataTemplate(typeof(AnimalSearchItemTemplate));
         }
 
         protected override void OnQueryChanged(string oldValue, string newValue)
