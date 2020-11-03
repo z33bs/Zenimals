@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:controls="clr-namespace:Zenimals.Controls"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"       
        xmlns:views="clr-namespace:Zenimals.Views"
        xmlns:mvvm="clr-namespace:ZenMvvm;assembly=ZenMvvm"
-       FlyoutBackgroundImage="photo.jpg"
-       FlyoutBackgroundImageAspect="AspectFill"
+       FlyoutBackgroundColor="LightGray"
        FlyoutHeaderBehavior="CollapseOnScroll"
        Navigating="OnNavigating"
        Navigated="OnNavigated"
@@ -60,18 +58,21 @@
         </Style>
     </Shell.Resources>
 
-    <Shell.FlyoutHeader>
-        <Grid BackgroundColor="Black">
-            <Image Aspect="AspectFill" 
-               Source="xamarinstore.jpg" 
-               Opacity="0.6" />
-            <Label Text="Animals" 
-               TextColor="White" 
-               FontAttributes="Bold" 
-               HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Center" />
-        </Grid>
-    </Shell.FlyoutHeader>
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <StackLayout HeightRequest="150"
+                         BackgroundColor="Black">
+                <Label Text="Zenimals"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
 
     <FlyoutItem Route="animals"
                 Title="Animals"
