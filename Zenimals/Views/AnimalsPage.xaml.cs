@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Zenimals.Data;
-using Zenimals.Models;
 using Zenimals.ViewModels;
 using ZenMvvm;
 
@@ -11,17 +9,6 @@ namespace Zenimals.Views
 {
     public partial class AnimalsPage : ContentPage
     {
-        IEnumerable<Animal> data;
-        public IEnumerable<Animal> Data
-        {
-            get => data;
-            set
-            {
-                data = value;
-                OnPropertyChanged(nameof(Data));
-            }
-        }
-
         Color itemSelectedBackgroundColor;
         public Color ItemSelectedBackgroundColor
         {
