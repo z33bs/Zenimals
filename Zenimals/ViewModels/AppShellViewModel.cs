@@ -1,11 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
-using Xamarin.Forms;
 using Zenimals.Data;
-using Zenimals.Models;
 using ZenMvvm;
 using ZenMvvm.Helpers;
 
@@ -22,29 +21,28 @@ namespace Zenimals.ViewModels
         {
             this.navigationService = navigationService;
 
-            //ZM Instead of => new Command<string>(async (url) => await Launcher.OpenAsync(url));
-            HelpCommand = new SafeCommand<string>(Launcher.OpenAsync, mustRunOnCurrentSyncContext: true);
-            RandomPageCommand = new SafeCommand(NavigateToRandomPageAsync, mustRunOnCurrentSyncContext: true);
+            //ZM Instead of => new Command<string>(
+            // async (url) => await Launcher.OpenAsync(url));
+            HelpCommand = new SafeCommand<string>(
+                Launcher.OpenAsync, mustRunOnCurrentSyncContext: true);
+            RandomPageCommand = new SafeCommand(
+                NavigateToRandomPageAsync, mustRunOnCurrentSyncContext: true);
         }
 
         async Task NavigateToRandomPageAsync()
         {
-            var rand = new Random();
-            var destinationRoute = "details";
+            var random = new Random();
+            var alldata = DiContainer
+                .Resolve<IEnumerable<IData>>();
+            var randomAnimalData = alldata
+                .ElementAt(random.Next(0, alldata.Count()))
+                .Data;
+            var animal = randomAnimalData
+                .ElementAt(random.Next(0, randomAnimalData.Count));
 
-            var AnimalData = new Func<Animal>[] {
-                ()=> MonkeyData.Monkeys.ElementAt(rand.Next(0, MonkeyData.Monkeys.Count)),
-                ()=> BearData.Bears.ElementAt(rand.Next(0, BearData.Bears.Count)),
-                ()=> CatData.Cats.ElementAt(rand.Next(0, CatData.Cats.Count)),
-                ()=> DogData.Dogs.ElementAt(rand.Next(0, DogData.Dogs.Count)),
-                ()=> ElephantData.Elephants.ElementAt(rand.Next(0, ElephantData.Elephants.Count)),
-            };
-
-            var animal = AnimalData.ElementAt(rand.Next(0, AnimalData.Length)).Invoke();
-
-            ShellNavigationState state = navigationService.CurrentShell.CurrentState;
-            await navigationService.GoToAsync<Animal>(
-                $"{state.Location}/{destinationRoute}", animal);
+            var state = navigationService.CurrentShell.CurrentState;
+            await navigationService.GoToAsync(
+                $"{state.Location}/details", animal);
             navigationService.CurrentShell.FlyoutIsPresented = false;
         }
     }
