@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"       
-       xmlns:views="clr-namespace:Zenimals.Views"
-       xmlns:mvvm="clr-namespace:ZenMvvm;assembly=ZenMvvm"
+       xmlns:views="clr-namespace:Zenimals.Views"       
        FlyoutBackgroundColor="LightGray"
        FlyoutHeaderBehavior="CollapseOnScroll"
        Navigating="OnNavigating"
        Navigated="OnNavigated"
-       mvvm:ViewModelLocator.WireSpecificAssemblyQualifiedViewModel="Zenimals.ViewModels.AppShellViewModel, Zenimals"
        x:Class="Zenimals.AppShell"
        x:Name="self">
 
@@ -56,7 +54,6 @@
                 </views:AnimalsPage>
             </ShellContent>
         </Tab>
-
         <ShellContent
             Route="monkeys"
             Style="{StaticResource MonkeysShell}"
@@ -105,5 +102,4 @@
               IconImageSource="help.png"
               Command="{Binding HelpCommand}"
               CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />
-
 </Shell>
