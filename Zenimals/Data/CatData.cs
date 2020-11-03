@@ -3,15 +3,15 @@ using Zenimals.Models;
 
 namespace Zenimals.Data
 {
-    public static class CatData
+    public class CatData : IData
     {
-        public static IList<Animal> Cats { get; private set; }
+        public IList<Animal> Data { get; private set; }
 
-        static CatData()
+        public CatData()
         {
-            Cats = new List<Animal>();
+            Data = new List<Animal>();
 
-            Cats.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Abyssinian",
                 Location = "Ethopia",
@@ -19,7 +19,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Gustav_chocolate.jpg/168px-Gustav_chocolate.jpg"
             });
 
-            Cats.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Arabian Mau",
                 Location = "Arabian Peninsula",
@@ -27,7 +27,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/d/d3/Bex_Arabian_Mau.jpg"
             });
 
-            Cats.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Bengal",
                 Location = "Asia",
@@ -35,7 +35,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Paintedcats_Red_Star_standing.jpg/187px-Paintedcats_Red_Star_standing.jpg"
             });
 
-            Cats.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Burmese",
                 Location = "Thailand",
@@ -43,7 +43,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/0/04/Blissandlucky11.jpg"
             });
 
-            Cats.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Cyprus",
                 Location = "Cyprus",
@@ -51,7 +51,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/CyprusShorthair.jpg/320px-CyprusShorthair.jpg"
             });
 
-            Cats.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "German Rex",
                 Location = "Germany",
@@ -59,7 +59,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/c/c7/German_rex_harry_%28cropped%29.jpg"
             });
 
-            Cats.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Highlander",
                 Location = "United States",
@@ -67,7 +67,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Highlander-7.jpg/293px-Highlander-7.jpg"
             });
 
-            Cats.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Manx",
                 Location = "Isle of Man",
@@ -75,7 +75,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/en/9/9b/Manx_cat_by_Karen_Weaver.jpg"
             });
 
-            Cats.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Peterbald",
                 Location = "Russia",
@@ -83,7 +83,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/c/c7/Peterbald_male_Shango_by_Irina_Polunina.jpg"
             });
 
-            Cats.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Scottish Fold",
                 Location = "Scotland",
@@ -91,7 +91,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Adult_Scottish_Fold.jpg/240px-Adult_Scottish_Fold.jpg"
             });
 
-            Cats.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Sphynx",
                 Location = "Europe",

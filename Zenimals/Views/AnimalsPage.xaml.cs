@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Zenimals.Data;
 using Zenimals.Models;
+using Zenimals.ViewModels;
 using ZenMvvm;
 
 namespace Zenimals.Views
@@ -32,6 +33,9 @@ namespace Zenimals.Views
             }
         }
 
+        public AnimalsPage()
+        {
+        }
 
         public AnimalsPage(string animal)
         {
@@ -48,14 +52,14 @@ namespace Zenimals.Views
                 "Monkeys" => Color.FromHex("#689F39"),
                 _ => throw new NotImplementedException()
             };
-
-            Data = animal switch
+          
+            BindingContext = animal switch
             {
-                "Dogs" => DogData.Dogs,
-                "Cats" => CatData.Cats,
-                "Bears" => BearData.Bears,
-                "Elephants" => ElephantData.Elephants,
-                "Monkeys" => MonkeyData.Monkeys,
+                "Dogs" => DiContainer.Resolve<AnimalsViewModel<DogData>>(),
+                "Cats" => DiContainer.Resolve<AnimalsViewModel<CatData>>(),
+                "Bears" => DiContainer.Resolve<AnimalsViewModel<BearData>>(),
+                "Elephants" => DiContainer.Resolve<AnimalsViewModel<ElephantData>>(),
+                "Monkeys" => DiContainer.Resolve<AnimalsViewModel<MonkeyData>>(),
                 _ => throw new NotImplementedException()
             };
         }

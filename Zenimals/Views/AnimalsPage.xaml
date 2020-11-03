@@ -3,10 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:Zenimals.Controls"
-    x:Class="Zenimals.Views.AnimalsPage"
-
-    xmlns:mvvm="clr-namespace:ZenMvvm;assembly=ZenMvvm"
-    mvvm:ViewModelLocator.AutoWireViewModel="True"
+    x:Class="Zenimals.Views.AnimalsPage"    
     x:Name="self">
 
     <ContentPage.Resources>
@@ -29,11 +26,11 @@
     </ContentPage.Resources>
 
     <Shell.SearchHandler>
-        <controls:AnimalSearchHandler Data="{Binding Data, Source={x:Reference self}}"/>
+        <controls:AnimalSearchHandler Data="{Binding Data}"/>
     </Shell.SearchHandler>
 
     <CollectionView Margin="20"
-                    ItemsSource="{Binding Data, Source={x:Reference self}}"
+                    ItemsSource="{Binding BindingContext.Data, Source={x:Reference self}}"
                     ItemTemplate="{StaticResource AnimalTemplate}"
                     SelectionMode="Single"
                     x:Name="AnimalsCollectionView"

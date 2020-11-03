@@ -3,15 +3,15 @@ using Zenimals.Models;
 
 namespace Zenimals.Data
 {
-    public static class DogData
+    public class DogData : IData
     {
-        public static IList<Animal> Dogs { get; private set; }
+        public IList<Animal> Data { get; private set; }
 
-        static DogData()
+        public DogData()
         {
-            Dogs = new List<Animal>();
+            Data = new List<Animal>();
 
-            Dogs.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Afghan Hound",
                 Location = "Afghanistan",
@@ -19,7 +19,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/6/69/Afghane.jpg"
             });
 
-            Dogs.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Alpine Dachsbracke",
                 Location = "Austria",
@@ -27,7 +27,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Alpejski_gończy_krótkonożny_g99.jpg/320px-Alpejski_gończy_krótkonożny_g99.jpg"
             });
 
-            Dogs.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "American Bulldog",
                 Location = "United States",
@@ -35,7 +35,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/5/5e/American_Bulldog_600.jpg"
             });
 
-            Dogs.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Bearded Collie",
                 Location = "Scotland",
@@ -43,7 +43,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/9/9c/Bearded_Collie_600.jpg"
             });
 
-            Dogs.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Boston Terrier",
                 Location = "United States",
@@ -51,7 +51,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Boston-terrier-carlos-de.JPG/320px-Boston-terrier-carlos-de.JPG"
             });
 
-            Dogs.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Canadian Eskimo",
                 Location = "Canada",
@@ -59,7 +59,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/7/79/Spoonsced.jpg"
             });
 
-            Dogs.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Eurohound",
                 Location = "Scandinavia",
@@ -67,7 +67,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/9/98/Eurohound.jpg"
             });
 
-            Dogs.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Irish Terrier",
                 Location = "Ireland",
@@ -75,7 +75,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/IrishTerrierSydenhamHillWoods.jpg/180px-IrishTerrierSydenhamHillWoods.jpg"
             });
 
-            Dogs.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Kerry Beagle",
                 Location = "Ireland",
@@ -83,7 +83,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/7/75/Kerry_Beagle_from_1915.JPG"
             });
 
-            Dogs.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Norwegian Buhund",
                 Location = "Norway",
@@ -91,7 +91,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/3/3b/Norwegian_Buhund_600.jpg"
             });
 
-            Dogs.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Patterdale Terrier",
                 Location = "England",
@@ -99,7 +99,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/05078045_Patterdale_Terrier.jpg/320px-05078045_Patterdale_Terrier.jpg"
             });
 
-            Dogs.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "St. Bernard",
                 Location = "Italy, Switzerland",

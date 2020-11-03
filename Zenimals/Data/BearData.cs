@@ -3,15 +3,15 @@ using Zenimals.Models;
 
 namespace Zenimals.Data
 {
-    public static class BearData
+    public class BearData : IData
     {
-        public static IList<Animal> Bears { get; private set; }
+        public IList<Animal> Data { get; private set; }
 
-        static BearData()
+        public BearData()
         {
-            Bears = new List<Animal>();
+            Data = new List<Animal>();
 
-            Bears.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "American Black Bear",
                 Location = "North America",
@@ -19,7 +19,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/0/08/01_Schwarzbär.jpg"
             });
 
-            Bears.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Asian Black Bear",
                 Location = "Asia",
@@ -27,7 +27,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Ursus_thibetanus_3_%28Wroclaw_zoo%29.JPG/180px-Ursus_thibetanus_3_%28Wroclaw_zoo%29.JPG"
             });
 
-            Bears.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Brown Bear",
                 Location = "Northern Eurasia & North America",
@@ -35,7 +35,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Kamchatka_Brown_Bear_near_Dvuhyurtochnoe_on_2015-07-23.jpg/320px-Kamchatka_Brown_Bear_near_Dvuhyurtochnoe_on_2015-07-23.jpg"
             });
 
-            Bears.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Giant Panda",
                 Location = "China",
@@ -43,7 +43,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/320px-Grosser_Panda.JPG"
             });
 
-            Bears.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Grizzly-Polar Bear Hybrid",
                 Location = "Canadian Artic",
@@ -51,7 +51,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Grolar.JPG/276px-Grolar.JPG"
             });
 
-            Bears.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Sloth Bear",
                 Location = "Indian Subcontinent",
@@ -59,7 +59,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sloth_Bear_Washington_DC.JPG/320px-Sloth_Bear_Washington_DC.JPG"
             });
 
-            Bears.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Sun Bear",
                 Location = "Southeast Asia",
@@ -67,7 +67,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Sitting_sun_bear.jpg/319px-Sitting_sun_bear.jpg"
             });
 
-            Bears.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Polar Bear",
                 Location = "Artic Circle",
@@ -75,7 +75,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg"
             });
 
-            Bears.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Spectacled Bear",
                 Location = "South America",
@@ -83,7 +83,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Spectacled_Bear_-_Houston_Zoo.jpg/264px-Spectacled_Bear_-_Houston_Zoo.jpg"
             });
 
-            Bears.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Cave Bear",
                 Location = "Extinct",
@@ -91,7 +91,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Teufelshöhle-Höhlenbär-Dreiviertelprofil.jpg/320px-Teufelshöhle-Höhlenbär-Dreiviertelprofil.jpg"
             });
 
-            Bears.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Short-faced Bear",
                 Location = "Extinct",
@@ -99,7 +99,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/ArctodusSimusSkeleton.jpg/320px-ArctodusSimusSkeleton.jpg"
             });
 
-            Bears.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "California Grizzly Bear",
                 Location = "Extinct",

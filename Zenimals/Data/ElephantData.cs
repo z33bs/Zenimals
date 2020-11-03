@@ -3,15 +3,15 @@ using Zenimals.Models;
 
 namespace Zenimals.Data
 {
-    public static class ElephantData
+    public class ElephantData : IData
     {
-        public static IList<Animal> Elephants { get; private set; }
+        public IList<Animal> Data { get; private set; }
 
-        static ElephantData()
+        public ElephantData()
         {
-            Elephants = new List<Animal>();
+            Data = new List<Animal>();
 
-            Elephants.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "African Bush Elephant",
                 Location = "Africa",
@@ -19,7 +19,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/African_Elephant_%28Loxodonta_africana%29_bull_%2831100819046%29.jpg/320px-African_Elephant_%28Loxodonta_africana%29_bull_%2831100819046%29.jpg"
             });
 
-            Elephants.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "African Forest Elephant",
                 Location = "Africa",
@@ -27,7 +27,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/6/6a/African_Forest_Elephant.jpg"
             });
 
-            Elephants.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Desert Elephant",
                 Location = "Africa",
@@ -35,7 +35,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Desert_elephants_in_the_Huab_River.jpg/320px-Desert_elephants_in_the_Huab_River.jpg"
             });
 
-            Elephants.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Borneo Elephant",
                 Location = "Asia",
@@ -43,7 +43,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Elephant_%40_kabini.jpg/180px-Elephant_%40_kabini.jpg"
             });
 
-            Elephants.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Indian Elephant",
                 Location = "Asia",
@@ -51,7 +51,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Elephas_maximus_%28Bandipur%29.jpg/320px-Elephas_maximus_%28Bandipur%29.jpg"
             });
 
-            Elephants.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Sri Lankan Elephant",
                 Location = "Asia",
@@ -59,7 +59,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Srilankan_tuskelephant.jpg/213px-Srilankan_tuskelephant.jpg"
             });
 
-            Elephants.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Sumatran Elephant",
                 Location = "Asia",
@@ -67,7 +67,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Borobudur-Temple-Park_Elephant-cage-01.jpg/320px-Borobudur-Temple-Park_Elephant-cage-01.jpg"
             });
 
-            Elephants.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Pygmy Elephant",
                 Location = "Africa & Asia",
@@ -75,7 +75,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/9/93/Borneo-elephant-PLoS_Biology.jpg"
             });
 
-            Elephants.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Mammoth",
                 Location = "Extinct",
@@ -83,7 +83,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Columbian_mammoth.JPG/320px-Columbian_mammoth.JPG"
             });
 
-            Elephants.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Mastodon",
                 Location = "Extinct",
@@ -91,7 +91,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Mammut_americanum.jpg/320px-Mammut_americanum.jpg"
             });
 
-            Elephants.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Dwarf Elephant",
                 Location = "Extinct",
@@ -99,7 +99,7 @@ namespace Zenimals.Data
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Elephas_skeleton.JPG/320px-Elephas_skeleton.JPG"
             });
 
-            Elephants.Add(new Animal
+            Data.Add(new Animal
             {
                 Name = "Pygmy Mammoth",
                 Location = "Extinct",
