@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 using Zenimals.Data;
 using Zenimals.Models;
 using ZenMvvm;
@@ -35,11 +34,11 @@ namespace Zenimals.ViewModels
                      };
                      ItemSelectedBackgroundColor = value switch
                      {
-                         "Dogs" => Color.FromHex("#039BE6"),
-                         "Cats" => Color.FromHex("#039BE6"),
-                         "Bears" => Color.FromHex("#546DFE"),
-                         "Elephants" => Color.FromHex("#ED3B3B"),
-                         "Monkeys" => Color.FromHex("#689F39"),
+                         "Dogs" => "#039BE6",
+                         "Cats" => "#039BE6",
+                         "Bears" => "#546DFE",
+                         "Elephants" => "#ED3B3B",
+                         "Monkeys" => "#689F39",
                          _ => throw new NotImplementedException()
                      };
                  });                
@@ -53,8 +52,8 @@ namespace Zenimals.ViewModels
             set => SetProperty(ref data, value);
         }
 
-        Color itemSelectedBackgroundColor;
-        public Color ItemSelectedBackgroundColor
+        string itemSelectedBackgroundColor;
+        public string ItemSelectedBackgroundColor
         {
             get => itemSelectedBackgroundColor;
             set => SetProperty(ref itemSelectedBackgroundColor, value);
