@@ -8412,6 +8412,9 @@ namespace Zenimals.Droid
 			// aapt resource value: 0x7F070081
 			public const int xamarin_logo = 2131165313;
 			
+			// aapt resource value: 0x7F070083
+			public const int zenmvvm_icon = 2131165315;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
