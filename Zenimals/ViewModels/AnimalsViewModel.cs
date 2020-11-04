@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Zenimals.Data;
@@ -9,6 +10,7 @@ using ZenMvvm.Helpers;
 
 namespace Zenimals.ViewModels
 {
+    //ZM: We've refactored to have one ViewModel, avoiding code duplication
     public class AnimalsViewModel : ObservableObject
     {
         public ICommand SelectionChangedCommand { get; }
@@ -19,6 +21,7 @@ namespace Zenimals.ViewModels
             get => title;
             set
             {
+                //Customise appearence and data based on Title
                 SetProperty(ref title, value, onChanged: () =>
                  {
                      Data = value switch
@@ -57,12 +60,19 @@ namespace Zenimals.ViewModels
             set => SetProperty(ref itemSelectedBackgroundColor, value);
         }
 
+        //ZM: Dependency injection in action. INavigationService will be
+        // resolved as a Singleton
         public AnimalsViewModel(INavigationService navigationService)
         {
-            SelectionChangedCommand = new SafeCommand<Animal>(
-                async (animal) =>
-                    await navigationService
-                    .GoToAsync<Animal>($"details",animal));
+            //ZM: Example of route navigation that passes data to
+            // the ViewModel with GoToAsync
+            async Task NavigateAsync(Animal animal)
+                => await navigationService
+                    .GoToAsync($"details", animal);
+
+            //ZM: SafeCommand avoids the need for async void lambdas
+            // async (animal) => await NavigateAsync(animal);
+            SelectionChangedCommand = new SafeCommand<Animal>(NavigateAsync);
         }
     }
 }

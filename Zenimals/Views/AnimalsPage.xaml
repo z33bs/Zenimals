@@ -8,7 +8,7 @@
     x:Class="Zenimals.Views.AnimalsPage"
     x:Name="self"
     Title="{Binding Title, Mode=TwoWay}">
-
+<!--ZM: ViewModel is set as BindingContext with AutoWireViewModel="True" above-->    
     <ContentPage.Resources>
         <Style TargetType="Grid">
             <Setter Property="VisualStateManager.VisualStateGroups">

@@ -1,7 +1,4 @@
-﻿//todo ZM comments allround
-//todo WirespecificViewModel -> both assembly q ualified and default. Document this feature.
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Zenimals
 {
@@ -10,6 +7,9 @@ namespace Zenimals
         public App()
         {
             InitializeComponent();
+
+            //ZM: No need to register dependencies
+            // we'll rely on Smart Resolve to take care of this
 
             MainPage = new AppShell();
         }

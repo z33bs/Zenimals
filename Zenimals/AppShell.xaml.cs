@@ -23,11 +23,13 @@ namespace Zenimals
 
             RegisterRoutes();
 
-            //ZM Instead of => new Command<string>(
-            // async (url) => await Launcher.OpenAsync(url));
+            //ZM: SafeCommand avoids the need for async void lambdas
+            // async (url) => await Launcher.OpenAsync(url)
+            // async () => await NavigateToRandomPageAsync()
             HelpCommand = new SafeCommand<string>(
                 Launcher.OpenAsync, mustRunOnCurrentSyncContext: true);
-
+            // mustRunOnCurrentSyncContext: true ensures the command
+            // runs on the UI thread 
             RandomPageCommand = new SafeCommand(
                 NavigateToRandomPageAsync, mustRunOnCurrentSyncContext: true);
 
@@ -52,6 +54,8 @@ namespace Zenimals
             Random random = new Random();
             INavigationService navigationService = DiContainer.Resolve<INavigationService>();
 
+            //ZM: Resolve<IEnumerable<IData>> returns all classes that
+            // implement IData in an enumerable
             var alldata = DiContainer
                 .Resolve<IEnumerable<IData>>();
             var randomAnimalData = alldata
