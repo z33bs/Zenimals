@@ -1,6 +1,5 @@
 ﻿//todo ZM comments allround
 //todo WirespecificViewModel -> both assembly q ualified and default. Document this feature.
-//todo AnimalsPage uses VM more
 
 using Xamarin.Forms;
 

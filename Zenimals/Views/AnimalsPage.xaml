@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:templates="clr-namespace:Zenimals.Templates"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
     xmlns:controls="clr-namespace:Zenimals.Controls"
-    x:Class="Zenimals.Views.AnimalsPage"    
-    x:Name="self">
+    xmlns:mvvm="clr-namespace:ZenMvvm;assembly=ZenMvvm"
+    mvvm:ViewModelLocator.AutoWireViewModel="True"
+    x:Class="Zenimals.Views.AnimalsPage"
+    x:Name="self"
+    Title="{Binding Title, Mode=TwoWay}">
 
     <ContentPage.Resources>
         <Style TargetType="Grid">
@@ -17,7 +19,7 @@
                             <VisualState.Setters>
                                 <Setter
                                     Property="BackgroundColor" 
-                                    Value="{Binding ItemSelectedBackgroundColor,Source={x:Reference self}}" />
+                                    Value="{Binding BindingContext.ItemSelectedBackgroundColor, Source={x:Reference self}}" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
@@ -31,10 +33,10 @@
     </Shell.SearchHandler>
 
     <CollectionView Margin="20"
-                    ItemsSource="{Binding BindingContext.Data, Source={x:Reference self}}"
+                    ItemsSource="{Binding Data}"
                     SelectionMode="Single"
                     x:Name="AnimalsCollectionView"
-                    SelectionChangedCommand="{Binding BindingContext.SelectionChangedCommand, Source={x:Reference Name=AnimalsCollectionView}}"
+                    SelectionChangedCommand="{Binding SelectionChangedCommand}"
                     SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference Name=AnimalsCollectionView}}">
         <CollectionView.ItemTemplate>
             <DataTemplate>
