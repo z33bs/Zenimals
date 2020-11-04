@@ -165,5 +165,8 @@
     <BundleResource Include="Resources\paw%402x.png" />
     <BundleResource Include="Resources\back.png" />
     <BundleResource Include="Resources\bear.png" />
+    <BundleResource Include="Resources\zenmvvm_icon%403x.png" />
+    <BundleResource Include="Resources\zenmvvm_icon%402x.png" />
+    <BundleResource Include="Resources\zenmvvm_icon.png" />
   </ItemGroup>
 </Project>

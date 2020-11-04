@@ -101,5 +101,5 @@
     <MenuItem Text="Help"
               IconImageSource="help.png"
               Command="{Binding HelpCommand}"
-              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />
+              CommandParameter="https://github.com/z33bs/ZenMvvm#zenmvvm" />
 </Shell>
