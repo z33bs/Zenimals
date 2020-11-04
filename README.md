@@ -2,16 +2,17 @@
 A refactored version of [Xaminals](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/) (a Xamarin Sample App), 
 demonstrating **ViewModel-First** navigation with [ZenMvvm](https://github.com/z33bs/zenmvvm). ZenMvvm is a Lightweight **ViewModel-First MVVM** framework for Xamarin.Forms.
 
->*Tip: Search for `//ZM` in the solution to quickly jump to code comments explaining ZenMvvm*
+>*Tip: Search for `//ZM` in the solution to quickly jump to code comments explaining ZenMvvm => [click here to do this now](https://github.com/z33bs/Zenimals/search?q=%2F%2FZM)*
 
 When browsing the code, look for:
 * Simpler, easier to understand architecture compared with Xaminals.
-* Dependency injection uses the convenient "Smart Resolve" feature meaning you don't have to register dependenices. Perfect for rapid prototyping.
-* Views wire-up to their corresponding ViewModels simply by adding:
+* ViewModels don't have a dependency on Xamarin.Forms
+* Dependency injection uses the convenient "Smart Resolve" feature meaning you don't have to register dependenices (perfect for rapid prototyping).
+* Views Bind to their corresponding ViewModels simply by adding:
 ```c#
 mvvm:ViewModelLocator.AutoWireViewModel="True"
 ```
-* Navigation from AnimalsViewModel that passes an Item object to the NewItemViewModel:
+* Navigation from AnimalsViewModel that passes an Item object to the AnimalDetailViewModel:
 ```c#
 await navigationService.GoToAsync($"details", animal);
 ```
