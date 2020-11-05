@@ -1,6 +1,6 @@
 # ![Logo](https://raw.githubusercontent.com/z33bs/Zenimals/master/Zenimals.iOS/Resources/zenmvvm_icon.png)Zenimals
 A refactored version of [Xaminals](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/) (a Xamarin Sample App), 
-demonstrating **ViewModel-First** navigation with [ZenMvvm](https://github.com/z33bs/zenmvvm). ZenMvvm is a Lightweight **ViewModel-First MVVM** framework for Xamarin.Forms.
+demonstrating **ViewModel-First** navigation with [ZenMvvm](https://github.com/z33bs/zenmvvm#readme). ZenMvvm is a Lightweight **ViewModel-First MVVM** framework for Xamarin.Forms.
 
 >*Tip: Search for `//ZM` in the solution to quickly jump to code comments explaining ZenMvvm => [click here to do this now](https://github.com/z33bs/zenimals-sample-app/search?q=%2F%2FZM)*
 
@@ -17,6 +17,6 @@ mvvm:ViewModelLocator.AutoWireViewModel="True"
 await navigationService.GoToAsync($"details", animal);
 ```
 
-See [ZenMvvmSampleApp](https://github.com/z33bs/zenmvvm-sample-app) for an example that showcases more features, including navigation with `PushAsync<TViewModel>()`.
+See [ZenMvvm Sample App](https://github.com/z33bs/zenmvvm-sample-app#readme) for an example that showcases more features, including navigation with `PushAsync<TViewModel>()`.
 
 ![screenshot](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/media/01all.png)
